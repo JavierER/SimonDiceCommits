@@ -10,8 +10,76 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.javii.simondicecommit.MainActivity">
 
-    <TextView
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:id="@+id/bazul"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@color/azulOscuro"
+            android:onClick="Click"
+            android:layout_height="182dp"
+            android:layout_width="174dp" />
+
+        <Button
+            android:layout_row="0"
+            android:layout_column="1"
+            android:id="@+id/brojo"
+            android:background="@color/rojoOscuro"
+            android:onClick="Click"
+            android:layout_height="182dp"
+            android:layout_width="174dp" />
+
+        <Button
+            android:id="@+id/bamarillo"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@color/amarilloOscuro"
+            android:onClick="Click"
+            android:layout_height="182dp"
+            android:layout_width="174dp" />
+
+        <Button
+            android:id="@+id/bverde"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:background="@color/verdeOscuro"
+            android:onClick="Click"
+            android:layout_height="182dp"
+            android:layout_width="174dp" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <Button
+            android:text="PLAY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bplay"
+            android:layout_weight="1"
+            android:onClick="iniciar"
+            />
+    </LinearLayout>
+
 </RelativeLayout>
