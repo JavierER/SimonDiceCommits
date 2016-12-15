@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -94,6 +95,28 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
             botones[3].setBackgroundResource(R.color.amarilloOscuro);
+
+        }
+    }
+
+    public void check(){
+        int acertados=0;
+        for(int i=0;i<numeros.length;i++){
+            if(numeros[i]!=orden[i]){
+                Toast.makeText(this, "Defeat", Toast.LENGTH_LONG).show();
+
+            }else{
+                acertados++;
+
+            }
+            if(acertados==4){
+                Toast.makeText(this, "You Won.", Toast.LENGTH_LONG).show();
+
+            }
+            enabledPlay=false;
+            pulsados=0;
+            numeros=new int[4];
+            orden=new int[4];
 
         }
     }
