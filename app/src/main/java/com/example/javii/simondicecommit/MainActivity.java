@@ -57,5 +57,29 @@ public class MainActivity extends AppCompatActivity {
             posicion = 3;
         }
     }
+
+    public void emepezar(View v) {
+        enabledPlay=true;
+        for (int i = 0; i < numeros.length; i++) {
+
+            numeros[i] = (int) (Math.random() * 4);
+            final Button b=botones[numeros[i]];
+            System.out.println(numeros[i]);
+
+            if(b.getId()==R.id.bazul){
+                b.setBackgroundResource(R.color.azul);
+
+            }else if(b.getId()==R.id.brojo){
+                b.setBackgroundResource(R.color.rojo);
+
+            }else if(b.getId()==R.id.bverde){
+                b.setBackgroundResource(R.color.verde);
+
+            }else {
+                b.setBackgroundResource(R.color.amarillo);
+
+            }
+        }
+    }
 }
 
