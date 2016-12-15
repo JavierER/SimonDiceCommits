@@ -41,19 +41,19 @@ public class MainActivity extends AppCompatActivity {
         final Button b = (Button) v;
 
         if (id == R.id.bazul) {
-            v.setBackgroundResource(R.color.azulOscuro);
+            v.setBackgroundResource(R.color.azul);
             posicion = 0;
 
         } else if (id == R.id.brojo) {
-            v.setBackgroundResource(R.color.rojoOscuro);
+            v.setBackgroundResource(R.color.rojo);
             posicion = 1;
 
         } else if (id == R.id.bverde) {
-            v.setBackgroundResource(R.color.verdeOscuro);
+            v.setBackgroundResource(R.color.verde);
             posicion = 2;
 
         } else {
-            v.setBackgroundResource(R.color.amarilloOscuro);
+            v.setBackgroundResource(R.color.amarillo);
             posicion = 3;
         }
     }
