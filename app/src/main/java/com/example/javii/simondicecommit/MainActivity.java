@@ -1,5 +1,6 @@
 package com.example.javii.simondicecommit;
 
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Handler display2 = new Handler();
     Button[] botones;
 
+    MediaPlayer sonidos[];
     int numeros[];
     int orden[];
     int pulsados = 0;
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         botones[1] = (Button) findViewById(R.id.brojo);
         botones[2] = (Button) findViewById(R.id.bverde);
         botones[3] = (Button) findViewById(R.id.bamarillo);
+        sonidos = new MediaPlayer[4];
+        sonidos[0]=MediaPlayer.create(this,R.raw.allahu);
+        sonidos[1]=MediaPlayer.create(this,R.raw.sonido1);
+        sonidos[2]=MediaPlayer.create(this,R.raw.mariosalto);
+        sonidos[3]=MediaPlayer.create(this,R.raw.mariomoneda);
     }
 
     public void Click(View v) {
@@ -43,18 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.bazul) {
             v.setBackgroundResource(R.color.azul);
+            sonidos[0].start();
             posicion = 0;
 
         } else if (id == R.id.brojo) {
             v.setBackgroundResource(R.color.rojo);
+            sonidos[1].start();
             posicion = 1;
 
         } else if (id == R.id.bverde) {
             v.setBackgroundResource(R.color.verde);
+            sonidos[2].start();
             posicion = 2;
 
         } else {
             v.setBackgroundResource(R.color.amarillo);
+            sonidos[3].start();
             posicion = 3;
         }
 
