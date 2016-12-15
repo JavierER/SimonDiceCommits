@@ -81,5 +81,21 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void reiniciar(int id) {
+        if (id == R.id.bazul) {
+            botones[0].setBackgroundResource(R.color.azulOscuro);
+
+        } else if (id == R.id.brojo) {
+            botones[1].setBackgroundResource(R.color.rojoOscuro);
+
+        } else if (id == R.id.bverde) {
+            botones[2].setBackgroundResource(R.color.verdeOscuro);
+
+        } else {
+            botones[3].setBackgroundResource(R.color.amarilloOscuro);
+
+        }
+    }
 }
 
