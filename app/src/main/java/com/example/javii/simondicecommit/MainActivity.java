@@ -60,26 +60,60 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void emepezar(View v) {
-        enabledPlay=true;
+        enabledPlay = true;
+
         for (int i = 0; i < numeros.length; i++) {
 
             numeros[i] = (int) (Math.random() * 4);
-            final Button b=botones[numeros[i]];
+            final Button b = botones[numeros[i]];
             System.out.println(numeros[i]);
 
-            if(b.getId()==R.id.bazul){
+            if (b.getId() == R.id.bazul) {
+                display1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        b.setBackgroundResource(R.color.azul);
+                    }
+                }, tiempoEncendido);
                 b.setBackgroundResource(R.color.azul);
 
-            }else if(b.getId()==R.id.brojo){
+            } else if (b.getId() == R.id.brojo) {
+                display1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        b.setBackgroundResource(R.color.rojo);
+                    }
+                }, tiempoEncendido);
                 b.setBackgroundResource(R.color.rojo);
 
-            }else if(b.getId()==R.id.bverde){
+            } else if (b.getId() == R.id.bverde) {
+                display1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        b.setBackgroundResource(R.color.verde);
+                    }
+                }, tiempoEncendido);
                 b.setBackgroundResource(R.color.verde);
 
-            }else {
+            } else {
+                display1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        b.setBackgroundResource(R.color.amarillo);
+                    }
+                }, tiempoEncendido);
                 b.setBackgroundResource(R.color.amarillo);
-
             }
+            final Button boton=b;
+            display2.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    reiniciar(boton.getId());
+                }
+            },tiempoApagado);
+
+            tiempoEncendido+=300;
+            tiempoApagado+=600;
         }
     }
 
