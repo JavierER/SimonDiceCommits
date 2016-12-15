@@ -57,54 +57,73 @@ public class MainActivity extends AppCompatActivity {
             v.setBackgroundResource(R.color.amarillo);
             posicion = 3;
         }
+
+        Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                reiniciar(b.getId());
+            }
+        },500);
+
+        if(enabledPlay) {
+            orden[pulsados] = posicion;
+            pulsados++;
+            if (pulsados == 4) {
+                check();
+
+            }
+        }
     }
 
-    public void emepezar(View v) {
-        enabledPlay = true;
-
+    public void empezar(View v) {
+        enabledPlay=true;
         for (int i = 0; i < numeros.length; i++) {
 
             numeros[i] = (int) (Math.random() * 4);
-            final Button b = botones[numeros[i]];
+            final Button b=botones[numeros[i]];
             System.out.println(numeros[i]);
 
-            if (b.getId() == R.id.bazul) {
+            if(b.getId()==R.id.bazul){
                 display1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         b.setBackgroundResource(R.color.azul);
-                    }
-                }, tiempoEncendido);
-                b.setBackgroundResource(R.color.azul);
 
-            } else if (b.getId() == R.id.brojo) {
+                    }
+                },tiempoEncendido);
+
+
+
+            }else if(b.getId()==R.id.brojo){
                 display1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         b.setBackgroundResource(R.color.rojo);
                     }
-                }, tiempoEncendido);
-                b.setBackgroundResource(R.color.rojo);
+                },tiempoEncendido);
+            }else if(b.getId()==R.id.bverde){
 
-            } else if (b.getId() == R.id.bverde) {
                 display1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         b.setBackgroundResource(R.color.verde);
-                    }
-                }, tiempoEncendido);
-                b.setBackgroundResource(R.color.verde);
 
-            } else {
+                    }
+                },tiempoEncendido);
+            }else {
+
                 display1.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         b.setBackgroundResource(R.color.amarillo);
+
                     }
-                }, tiempoEncendido);
-                b.setBackgroundResource(R.color.amarillo);
+                },tiempoEncendido);
             }
-            final Button boton=b;
+
+            final Button boton= b;
+
             display2.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -114,7 +133,11 @@ public class MainActivity extends AppCompatActivity {
 
             tiempoEncendido+=300;
             tiempoApagado+=600;
+
+
         }
+
+
     }
 
     public void reiniciar(int id) {
@@ -144,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
             if(acertados==4){
-                Toast.makeText(this, "You Won.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "You Win.", Toast.LENGTH_LONG).show();
 
             }
             enabledPlay=false;
