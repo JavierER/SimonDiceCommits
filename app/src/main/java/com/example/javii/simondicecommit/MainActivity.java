@@ -183,6 +183,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
             if(acertados==4){
+                //Creamos un intent en el metodo que comprueba si es correcta o no la secuencia y en caso afirmativo
+                //ese intent llama a la actividad creada anteriormente y muestra un toast con "You Win" mostrando que has acertado.
+                Intent intent = new Intent(this, Main2Activity.class);
+                startActivity(intent);
                 Toast.makeText(this, "You Win.", Toast.LENGTH_LONG).show();
 
             }
