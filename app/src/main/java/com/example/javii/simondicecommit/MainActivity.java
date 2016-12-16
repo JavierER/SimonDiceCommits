@@ -1,5 +1,6 @@
 package com.example.javii.simondicecommit;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -171,6 +172,10 @@ public class MainActivity extends AppCompatActivity {
         int acertados=0;
         for(int i=0;i<numeros.length;i++){
             if(numeros[i]!=orden[i]){
+                //Creamos un intent en el metodo que comprueba si es correcta o no la secuencia y en caso negativo
+                //ese intent llama a la actividad creada anteriormente y muestra un toast con "Defeat" mostrando que has fallado.
+                Intent intent = new Intent(this, Main2Activity.class);
+                startActivity(intent);
                 Toast.makeText(this, "Defeat", Toast.LENGTH_LONG).show();
 
             }else{
